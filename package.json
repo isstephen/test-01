@@ -1,0 +1,20 @@
+{
+  "name": "s3-check-lambda",
+  "version": "1.0.0",
+  "description": "AWS Lambda function written in TypeScript to inspect S3 bucket contents.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "package": "npm run clean && npm run build && cd dist && zip -r ../lambda.zip ."
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.800.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.147",
+    "@types/node": "^22.15.3",
+    "typescript": "^5.8.3"
+  }
+}
